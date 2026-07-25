@@ -35,7 +35,7 @@ function getPayload() {
 
   data.append("pais", "Guatemala");
   data.append("producto", "Nuevo Producto");
-  data.append("precio", "300");
+  data.append("precio", "350");
 
   data.append("estado", "Nuevo");
   data.append("estado_pago", "Pago contra entrega");
@@ -119,7 +119,7 @@ form.addEventListener("submit", async (event) => {
 
         content_name: "Nuevo Producto",
 
-        value: 300,
+        value: 350,
 
         currency: "GTQ"
 
