@@ -21,8 +21,8 @@ function getTrackingParams() {
   return {
     source: params.get("utm_source") || "Facebook",
     campaign: params.get("utm_campaign") || "Test1",
-    adset: params.get("utm_term") || "Broad",
-    ad: params.get("utm_content") || "Video1"
+    adset: params.get("utm_adset") || "Broad",
+    ad: params.get("utm_ad") || "Video1"
   };
 }
 
