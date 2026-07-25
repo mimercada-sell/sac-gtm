@@ -1,5 +1,5 @@
 // Pega aqui la URL publicada de tu Google Apps Script
-const SHEET_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwS2jEtusY3OOiH7QsdHIKZzuxhQ9bqjG9XIw1eYZ5E2k8LKg6bu3MZpHfGs3kLt-76vw/exec";
+const SHEET_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbw3KO1Dx5d1phhCut9mg98uMRTqMbEKX8lzto9B1tXxTzNGAb23ftS_G8lZ5zWij-hZDQ/exec";
 
 
 const form = document.querySelector("#orderForm");
@@ -131,10 +131,7 @@ form.addEventListener("submit", async (event) => {
 
     form.reset();
 
-    setMessage(
-      "Pedido enviado. Te contactaremos para confirmar la entrega.",
-      "success"
-    );
+    alert("✅ Pedido enviado correctamente. Te contactaremos para confirmar la entrega.");
 
 
 
@@ -144,28 +141,22 @@ form.addEventListener("submit", async (event) => {
     console.error(error);
 
 
-    setMessage(
-      "No se pudo enviar el pedido. Revisa tu conexión e intenta otra vez.",
-      "error"
-    );
+    alert("❌ Error al enviar el pedido. Intenta de nuevo.");
 
 
   } finally {
 
+  isSubmitting = false;
 
-    // Enable button again after submit
-    isSubmitting = false;
+  submitButton.disabled = false;
 
-    submitButton.disabled = false;
+  submitButton.style.opacity = "1";
 
-    submitButton.style.opacity = "1";
+  submitButton.style.cursor = "pointer";
 
-    submitButton.style.cursor = "pointer";
+  submitButton.textContent = "Enviar pedido";
 
-    submitButton.textContent = "Enviar pedido";
-
-
-  }
+}
 
 
 });
