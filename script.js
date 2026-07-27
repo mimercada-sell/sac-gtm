@@ -112,10 +112,10 @@ form.addEventListener("submit", async (event) => {
 
 
 
-    // Meta Pixel Lead
+    // Meta Pixel Purchase
     if (typeof fbq === "function") {
 
-      fbq("track", "Lead", {
+      fbq("track", "Purchase", {
 
         content_name: "Nuevo Producto",
 
